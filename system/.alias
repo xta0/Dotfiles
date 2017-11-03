@@ -1,0 +1,47 @@
+
+# shortcuts
+
+alias reload="source ~/.bash_profile"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+#######
+# tree
+#######
+
+alias tree="tree -A"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+
+#######
+# ls
+#######
+
+# Directory listing/traversal
+
+LS_COLORS=`is-supported "ls --color" --color -G`
+LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
+LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
+
+alias l="ls -lahA $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias ll="ls -lA $LS_COLORS"
+alias lt="ls -lhAtr $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias ld="ls -ld $LS_COLORS */"
+alias lpm="stat -c '%a %n' *"
+
+unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
+
+
+#alias ll="ls -lhA"
+#alias ls="ls -al"
+alias cat="ccat"
+alias rr="rm -rf"
+
+
+# C++
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+
+
+
+

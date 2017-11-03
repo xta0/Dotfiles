@@ -1,0 +1,10 @@
+
+.DS_Store
+.DB_Store
+/vendor
+/node_modules
+/brew_components
+/pods
+
+.idea
+!.gitkeep

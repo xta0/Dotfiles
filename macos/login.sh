@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+echo "Begin setting login items..."
+
+logins=(Flux
+Alfred\ 3
+Amethyst
+Dropbox)
+
+#add login items
+for (( i=0; i<${#logins[@]}; i++ ))
+do 
+    APP="${logins[$i]}"
+    osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/'"${APP}"'.app", hidden:false}'
+done 
+
+#show login items
+echo "Add login items:"
+osascript -e 'tell application "System Events" to get the name of every login item'
+
+
+#osascript -e 'tell application "System Events" to delete login item "itemname"' 
+
+echo "Done setting login items..."

@@ -1,0 +1,34 @@
+#########
+# macOS #
+#########
+
+#copy
+alias cpwd="pwd|tr -d '\n'|pbcopy"
+
+# quick enter
+alias st="cd ~/Desktop"
+alias coding="cd ~/Coding"
+
+
+# quick open
+
+alias chrome="open -a ~/Applications/Google\ Chrome.app"
+alias macdown="open -a ~/Applications/MacDown.app"
+
+# open iOS simulator
+
+alias iosim="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
+
+# Flush DNS
+
+alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+#update
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+#Neofetch
+alias sysinfo="neofetch"

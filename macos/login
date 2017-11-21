@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 echo "Begin setting login items..."
 
 logins=(Flux

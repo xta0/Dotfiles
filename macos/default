@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 echo "Setting Default MacOS Preferences..."
 
 COMPUTER_NAME="X0"

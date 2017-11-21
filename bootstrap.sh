@@ -96,8 +96,7 @@ for PACKAGE in $macos_packages;do
     PACKAGE_DIR=${DOTFILES_DIR}/macos/${PACKAGE}
 
     if [ -f ${PACKAGE_DIR} ]; then
-        chmod +x ${PACKAGE_DIR} && .${PACKAGE_DIR}
-    fi
+        chmod +x ${PACKAGE_DIR} && . ${PACKAGE_DIR}
     log "Done installing" "${PACKAGE}..."
 done 
 

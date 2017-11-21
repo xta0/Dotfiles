@@ -77,58 +77,23 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
 }
 
 
+# Create symlinks
+ln -svf "$DOTFILES_DIR/dotfiles/.profile" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.bashrc" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.zshrc" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.gitconfig" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
 
 #Install Packages
-macos_packages=(
-zsh 
-brew 
-# brew-cask 
-gem 
-npm 
-default 
-dock 
-login 
-)
+. "$DOTFILES_DIR/macos/zsh"
+. "$DOTFILES_DIR/macos/brew"
+. "$DOTFILES_DIR/macos/brew-cask"
+. "$DOTFILES_DIR/macos/gem"
+. "$DOTFILES_DIR/macos/npm"
+. "$DOTFILES_DIR/macos/default"
+. "$DOTFILES_DIR/macos/login"
+. "$DOTFILES_DIR/macos/dock"
 
-
-for PACKAGE in $macos_packages;do
-    log "Begin installing" "${PACKAGE}..."
-    PACKAGE_DIR=${DOTFILES_DIR}/macos/${PACKAGE}
-    [ -f ${PACKAGE_DIR} ] && . ${PACKAGE_DIR}
-
-    # if [ -f ${PACKAGE_DIR} ]; then
-    #     chmod +x ${PACKAGE_DIR} && . ${PACKAGE_DIR}
-    # fi
-    log "Done installing" "${PACKAGE}..."
-done 
-
-
-# Create symlinks
-dotfiles=(
-bash_profile 
-bashrc
-profile 
-zshrc 
-gitconfig
-gitignore_gloabl    
-)
-
-for DOTFILE in $dotfiles;do
-    
-    DOTFILE_DIR=${DOTFILES_DIR}/dotfiles/${DOTFILE}
-    #Check existing dotfiles
-    if [ -e "$HOME/.$DOTFILE" ]; then 
-        read ".$DOTFILE alreadly exists in your home directory. Are you sure to overwrite it? ([y]/n)" REPLY
-        if [[ ! $REPLY ]] || [[ $REPLY =~ ^[Yy]$ ]]; then
-            ln -sf "${DOTFILE_DIR}" "${HOME}/.${DOTFILE}"
-        fi
-    else
-        ln -s "${DOTFILE_DIR}" "${HOME}/.${DOTFILE}"
-    fi
-done 
-
-#clean up
-unset  PACKAGE PACKAGE_DIR DOTFILE DOTFILE_DIR REPLY
 
 success "Dotfiles installed!"
 

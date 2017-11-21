@@ -11,9 +11,11 @@ export ZSH_CUSTOM="${ZSH}/custom"
 sudo chsh -s $(which zsh)
 
 #Install Theme
+echo "Change Theme to xtao.zsh-theme..."
 cd ${ZSH_CUSTOM};mkdir themes;
 cp ${DOTFILES_DIR}/macos/Themes/xta0.zsh-theme ${ZSH_CUSTOM}/themes/
 
+echo "Install plugins..."
 #Install plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions

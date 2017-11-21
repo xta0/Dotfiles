@@ -97,6 +97,7 @@ for PACKAGE in $macos_packages;do
 
     if [ -f ${PACKAGE_DIR} ]; then
         chmod +x ${PACKAGE_DIR} && . ${PACKAGE_DIR}
+    fi
     log "Done installing" "${PACKAGE}..."
 done 
 

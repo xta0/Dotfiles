@@ -1,3 +1,4 @@
-install/
+install/*
+!install/.gitignore 
 .DS_Store
 .vscode/

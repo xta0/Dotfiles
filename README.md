@@ -14,8 +14,9 @@ xcode-select --install
 
 ### SSH
 
-### Plugins
+### Custom Settings
 
 - VSCode
+- iTerm
 
 

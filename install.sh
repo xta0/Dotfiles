@@ -42,11 +42,12 @@ if [[ "$OSTYPE" != *"darwin"* ]];then
     exit 1
 fi
 
-#Say Hello MSG
+hello ""
 
 log "Begin" "Install..."
 
 #Check if dotfile has been installed
+log "Checking" "directory..."
 if [ ! -n "$DOTFILES_DIR" ]; then 
     DOTFILES_DIR=${HOME}/.dotfiles
     export DOTFILES_DIR
@@ -76,15 +77,9 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
     exit 1
 }
 
-
-# Create symlinks
-ln -svf "$DOTFILES_DIR/dotfiles/.profile" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.bashrc" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.zshrc" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.gitconfig" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
-
 #Install Packages
+log "Installing" "Packages..."
+
 . "$DOTFILES_DIR/macos/zsh"
 . "$DOTFILES_DIR/macos/brew"
 . "$DOTFILES_DIR/macos/brew-cask"
@@ -93,6 +88,15 @@ ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
 . "$DOTFILES_DIR/macos/default"
 . "$DOTFILES_DIR/macos/login"
 . "$DOTFILES_DIR/macos/dock"
+
+# Create symlinks
+log "Creating" "Symlinks..."
+
+ln -svf "$DOTFILES_DIR/dotfiles/.profile" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.bashrc" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.zshrc" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.gitconfig" ~
+ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
 
 
 success "Dotfiles installed!"

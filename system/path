@@ -12,9 +12,8 @@ add2path "/usr/sbin"
 add2path "/usr/local/bin"
 add2path "/usr/local/sbin"
 add2path "${DOTFILES_DIR}/bin"
-if is-macos; then
-    add2path "$(brew --prefix coreutils)/libexec/gunbin"
-fi 
+add2path "$(brew --prefix coreutils)/libexec/gunbin"
+
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
 

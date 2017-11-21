@@ -1,5 +1,10 @@
+
 #install oh my zsh  
-export ZSH="$DOTFILE_DIR/install/oh-my-zsh";sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+export ZSH="$DOTFILE_DIR/install/oh-my-zsh";sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
+  echo "Could not install Oh My Zsh" >/dev/stderr
+  exit 1
+}
 export ZSH_CUSTOM="${ZSH}/custom"
 
 # Make zsh default shell

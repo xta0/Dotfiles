@@ -1,0 +1,45 @@
+
+#######
+# cd
+#######
+alias ..="cd .."
+alias ...="cd ../.."
+
+#######
+# tree
+#######
+
+alias tree="tree -A"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+
+#######
+# ls
+#######
+
+# Directory listing/traversal
+
+alias ls='ls -GFh'
+alias ll="ls -lA"
+alias lt="ls -lhAtr"
+alias ld="ls -ld"
+alias lpm="stat -c '%a %n' *"
+
+#######
+# cat
+#######
+alias cat="ccat"
+
+#######
+# rm 
+#######
+alias rr="rm -rf"
+
+#######
+# C++
+#######
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+
+
+
+

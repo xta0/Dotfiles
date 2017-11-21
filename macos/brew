@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+#Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew doctor
@@ -11,6 +12,8 @@ brew tap homebrew/science
 brew install coreutils
 brew install openssl
 brew install wget
+brew install git
+brew install xz 
 brew install ccat
 brew install tree
 brew install tmux

@@ -1,0 +1,21 @@
+
+#Do it only in macos
+if is-macos; then
+    
+    #install oh my zsh  
+    export ZSH="$DOTFILE_DIR/install/oh-my-zsh";sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    export ZSH_CUSTOM="${ZSH}/custom"
+
+    # Make zsh default shell
+    sudo chsh -s $(which zsh)
+
+    #Install Theme
+    cd ${ZSH_CUSTOM};mkdir themes;
+    cp ${DOTFILE_DIR}/macos/Themes/xta0.zsh-theme ${ZSH_CUSTOM}/themes/
+
+    #Install plugins
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+    git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+fi 
+

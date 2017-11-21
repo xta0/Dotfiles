@@ -5,7 +5,8 @@ echo "Begin setting login items..."
 logins=(Flux
 Alfred\ 3
 Amethyst
-Dropbox)
+Dropbox
+KeepingYouAwake)
 
 #add login items
 for (( i=0; i<${#logins[@]}; i++ ))

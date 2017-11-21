@@ -1,8 +1,7 @@
-
+#!/usr/bin/env bash
 
 #Install NVM
 brew install nvm
-
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh

@@ -1,0 +1,5 @@
+# Enable colors
+export CLICOLOR=1
+
+
+

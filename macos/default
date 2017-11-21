@@ -2,7 +2,7 @@
 
 echo "Setting Default MacOS Preferences..."
 
-COMPUTER_NAME="Flash"
+COMPUTER_NAME="X0"
 
 osascript -e 'tell application "System Preferences" to quit'
 

@@ -12,7 +12,7 @@ brew install brew-cask
 # Install apps for work
 apps=(
   alfred 
-  dash2
+  iterm2
   dropbox
   flux
   google-chrome
@@ -35,15 +35,15 @@ apps=(
   FutuNiuniu
   Pomotodo
   YoudaoNote
+  youdaodict
+  keepingyouawake
 )
 
 brew cask install --appdir="/Applications" "${apps[@]}"
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook qlvideo
 
-brew cask install --appdir="/Applications" go2shell
+sleep 1
 
-
-
-
- 
+#Clean cache
+brew cask cleanup

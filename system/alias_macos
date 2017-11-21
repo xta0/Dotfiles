@@ -11,16 +11,11 @@ alias coding="cd ~/Coding"
 
 
 # quick open
-
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
 alias macdown="open -a ~/Applications/MacDown.app"
 
-# open iOS simulator
-
-alias iosim="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
 
 # Flush DNS
-
 alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 #update
@@ -32,3 +27,18 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 #Neofetch
 alias sysinfo="neofetch"
+
+# screen saver
+alias afk="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+
+# Empty trash on mounted volumes and main HDD, and clear system logs
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Reload native apps
+alias killfinder="killall Finder"
+alias killdock="killall Dock"
+alias killmenubar="killall SystemUIServer NotificationCenter"
+alias killos="killfinder && killdock && killmenubar"
+
+## Kill all the tabs in Chrome to free up memory
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"

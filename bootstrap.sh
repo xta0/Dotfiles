@@ -94,7 +94,10 @@ login
 for PACKAGE in $macos_packages;do
     log "Begin installing" "${PACKAGE}..."
     PACKAGE_DIR=${DOTFILES_DIR}/macos/${PACKAGE}
-    [ -f ${PACKAGE_DIR} ] && . ${PACKAGE_DIR}
+
+    if [ -f ${PACKAGE_DIR} ]; then
+        chmod +x ${PACKAGE_DIR} && .${PACKAGE_DIR}
+    fi
     log "Done installing" "${PACKAGE}..."
 done 
 

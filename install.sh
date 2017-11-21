@@ -80,14 +80,12 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
 #Install Packages
 log "Installing" "Packages..."
 
-. "$DOTFILES_DIR/macos/zsh"
-. "$DOTFILES_DIR/macos/brew"
-. "$DOTFILES_DIR/macos/brew-cask"
-. "$DOTFILES_DIR/macos/gem"
-. "$DOTFILES_DIR/macos/npm"
-. "$DOTFILES_DIR/macos/default"
-. "$DOTFILES_DIR/macos/login"
-. "$DOTFILES_DIR/macos/dock"
+. "$DOTFILES_DIR/packages/zsh"
+. "$DOTFILES_DIR/packages/brew"
+# . "$DOTFILES_DIR/macos/brew-cask"
+. "$DOTFILES_DIR/packages/gem"
+. "$DOTFILES_DIR/packages/npm"
+
 
 # Create symlinks
 log "Creating" "Symlinks..."
@@ -97,6 +95,13 @@ ln -svf "$DOTFILES_DIR/dotfiles/.bashrc" ~
 ln -svf "$DOTFILES_DIR/dotfiles/.zshrc" ~
 ln -svf "$DOTFILES_DIR/dotfiles/.gitconfig" ~
 ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
+
+# Custom settings
+log "Custom" "Settings..."
+
+. "$DOTFILES_DIR/etc/macos/default"
+. "$DOTFILES_DIR/etc/macos/login"
+. "$DOTFILES_DIR/etc/macos/dock"
 
 
 success "Dotfiles installed!"

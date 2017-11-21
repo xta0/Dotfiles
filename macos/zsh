@@ -1,7 +1,7 @@
 
 #install oh my zsh  
 
-export ZSH="$DOTFILE_DIR/install/oh-my-zsh";sh -c "$(curl -fsSL https://raw.githubusercontent.com/xta0/oh-my-zsh/master/tools/install.sh)" || {
+export ZSH="$DOTFILES_DIR/install/oh-my-zsh";sh -c "$(curl -fsSL https://raw.githubusercontent.com/xta0/oh-my-zsh/master/tools/install.sh)" || {
   echo "Could not install Oh My Zsh" >/dev/stderr
   exit 1
 }

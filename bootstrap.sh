@@ -3,7 +3,6 @@
 # enable exist on error
 set -e
 
-
 msg() {
     printf '%b\n' "$1" >&2
 }
@@ -22,6 +21,12 @@ error() {
     msg "\033[1;31m[✘]\033[0m ${1}${2}"    
 }
 
+log() {
+    # Green="\[\033[0;32m\]"        # Green
+    msg "\033[0;32m${1}\033[0m ${2}"
+
+}
+
 hello() {
     local USER=$(/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }')
     msg "Login User: \033[33m$USER\033[0m"
@@ -29,7 +34,17 @@ hello() {
 
 main(){
 
-hello ""
+#Check Environment
+
+if [[ "$OSTYPE" != *"darwin"* ]];then
+    error "Current OS Type is not MacOS"
+    sleep 1
+    exit 1
+fi
+
+#Say Hello MSG
+
+log "Begin" "Install..."
 
 #Check if dotfile has been installed
 if [ ! -n "$DOTFILES_DIR" ]; then 
@@ -37,12 +52,11 @@ if [ ! -n "$DOTFILES_DIR" ]; then
     export DOTFILES_DIR
 fi
 
-#export utils
-PATH="$DOTFILES_DIR/bin:$PATH"
+
 
 if [ -d "$DOTFILES_DIR" ]; then
-    warning "You already have dotfiles installed.\n"
-    warning "You'll need to remove $DOTFILES_DIR if you want to re-install.\n"
+    warning "You already have dotfiles installed."
+    warning "You'll need to remove $DOTFILES_DIR if you want to re-install."
     exit 1
 fi
 
@@ -50,22 +64,25 @@ fi
 umask g-w,o-w
 
 #Begin clone dotfile repo
-msg "Cloning Dotfiles..."
+log "Cloning" "Dotfiles..."
 
 hash git >/dev/null 2>&1 || {
     error "Error: git is not installed\n"
     exit 1
 }
 
-env git clone https://github.com/xta0/Dotfiles.git || {
+env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
     error "Error: git clone of oh-my-zsh repo failed"
     exit 1
 }
+
+
+
 #Install Packages
-installs=(
+macos_packages=(
 zsh 
 brew 
-brew-cask 
+# brew-cask 
 gem 
 npm 
 default 
@@ -73,13 +90,14 @@ dock
 login 
 )
 
-if is-macos; then 
-    for INSTALL in macos
-    do
-        INSTALL_DIR=${DOTFILE_DIR}/install/${INSTALL}
-        [ -f ${INSTALL_DIR} ] && . ${INSTALL_DIR}
-    done 
-fi 
+
+for PACKAGE in $macos_packages;do
+    log "Begin installing" "${PACKAGE}..."
+    PACKAGE_DIR=${DOTFILES_DIR}/macos/${PACKAGE}
+    [ -f ${PACKAGE_DIR} ] && . ${PACKAGE_DIR}
+    log "Done installing" "${PACKAGE}..."
+done 
+
 
 # Create symlinks
 dotfiles=(
@@ -91,7 +109,7 @@ gitconfig
 gitignore_gloabl    
 )
 
-for DOTFILE in dotfiles;do
+for DOTFILE in $dotfiles;do
     
     DOTFILE_DIR=${DOTFILES_DIR}/dotfiles/${DOTFILE}
     #Check existing dotfiles
@@ -106,7 +124,7 @@ for DOTFILE in dotfiles;do
 done 
 
 #clean up
-unset  INSTALL INSTALL_DIR DOTFILE DOTFILE_DIR REPLY
+unset  PACKAGE PACKAGE_DIR DOTFILE DOTFILE_DIR REPLY
 
 success "Dotfiles installed!"
 

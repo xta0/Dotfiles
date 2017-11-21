@@ -1,6 +1,6 @@
 
 #install oh my zsh  
-export ZSH="$DOTFILES_DIR/install/oh-my-zsh";sh
+export ZSH="$DOTFILES_DIR/install/oh-my-zsh";
 git clone "https://github.com/xta0/oh-my-zsh.git" $ZSH || {
   echo "Could not install Oh My Zsh" >/dev/stderr
   exit 1

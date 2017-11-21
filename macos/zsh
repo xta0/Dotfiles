@@ -12,7 +12,7 @@ sudo chsh -s $(which zsh)
 
 #Install Theme
 cd ${ZSH_CUSTOM};mkdir themes;
-cp ${DOTFILE_DIR}/macos/Themes/xta0.zsh-theme ${ZSH_CUSTOM}/themes/
+cp ${DOTFILES_DIR}/macos/Themes/xta0.zsh-theme ${ZSH_CUSTOM}/themes/
 
 #Install plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting

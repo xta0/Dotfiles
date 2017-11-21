@@ -1,0 +1,50 @@
+
+#Install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew update
+brew upgrade
+
+tools=(
+    coreutils 
+    git 
+    openssl 
+    wget 
+    xz 
+    tree 
+    tmux 
+    htop 
+    readline 
+    dockutil 
+    neofetch
+)
+
+# Install tools
+brew install "${tools[@]}"
+
+brew tap homebrew/science
+
+pls=( 
+    haskell-stack 
+    smlnj 
+    clisp 
+    mit-scheme 
+    scala 
+    lua 
+    python 
+    python3 
+    node 
+    golang 
+    octave
+) 
+
+# Install tools
+brew install "${pls[@]}"
+
+# sleep 1
+sleep 1
+
+# Remove outdated versions from the cellar.
+brew cleanup
+
+echo "Brew Install Finished!"

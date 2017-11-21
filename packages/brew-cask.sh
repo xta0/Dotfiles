@@ -18,10 +18,8 @@ apps=(
   macdown
   slack
   sourcetree
-  sublime-text
   virtualbox
   visual-studio-code
-  webstorm
   spotify
   amethyst
   handbrake
@@ -39,8 +37,20 @@ apps=(
 )
 
 brew cask install --appdir="/Applications" "${apps[@]}"
-# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook qlvideo
+
+quick_look=( 
+  qlstephen 
+  qlmarkdown 
+  quicklook-json 
+  qlprettypatch 
+  quicklook-csv 
+  betterzipql 
+  qlimagesize 
+  webpquicklook 
+  qlvideo
+)
+brew cask install "${quick_look[@]}"
+ 
 
 sleep 1
 

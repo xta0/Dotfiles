@@ -80,11 +80,11 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
 #Install Packages
 log "Installing" "Packages..."
 
-. "$DOTFILES_DIR/packages/zsh"
-. "$DOTFILES_DIR/packages/brew"
+. "$DOTFILES_DIR/packages/zsh.sh"
+. "$DOTFILES_DIR/packages/brew.sh"
 # . "$DOTFILES_DIR/macos/brew-cask"
-. "$DOTFILES_DIR/packages/gem"
-. "$DOTFILES_DIR/packages/npm"
+. "$DOTFILES_DIR/packages/gem.sh"
+. "$DOTFILES_DIR/packages/npm.sh"
 
 
 # Create symlinks

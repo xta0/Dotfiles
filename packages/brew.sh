@@ -21,6 +21,7 @@ tools=(
 
 # Install tools
 brew install "${tools[@]}"
+export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`
 
 brew tap homebrew/science
 

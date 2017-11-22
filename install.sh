@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # enable exist on error
-set -e
+set -x
 
 msg() {
     printf '%b\n' "$1" >&2

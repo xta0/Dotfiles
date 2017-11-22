@@ -5,12 +5,15 @@ brew install nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-. "${DOTFILES_DIR}/system/.nvm"
-nvm install 6
+#install the latest node 
+nvm install node
+#nvm install 6
+
+#update npm
+npm install -g npm@latest
 
 # Globally install with npm
-packages=(
-  npm
-)
+packages=( lodash request chalk async commander )
 
+# install packages
 npm install -g "${packages[@]}"

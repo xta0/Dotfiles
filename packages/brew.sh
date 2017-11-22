@@ -34,7 +34,6 @@ pls=(
     lua 
     python 
     python3 
-    node 
     golang 
     octave
 ) 

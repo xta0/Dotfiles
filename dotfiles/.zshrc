@@ -13,16 +13,20 @@ export ZSH=${DOTFILES_DIR}/install/oh-my-zsh
 ZSH_THEME="xta0"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=${ZSH}/custom
+export ZSH_CUSTOM=${ZSH}/custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git z )
 
 #run oh-my-zsh config
 . $ZSH/oh-my-zsh.sh
 
 #source profile
 . ~/.profile
+
+
+#soruce plugins
+. $ZSH/plugins/z/z.sh

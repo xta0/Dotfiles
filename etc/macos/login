@@ -4,7 +4,9 @@ logins=(Flux
 Alfred\ 3
 Amethyst
 Dropbox
-KeepingYouAwake)
+KeepingYouAwake 
+BitBar
+Pomotodo)
 
 #add login items
 for (( i=0; i<${#logins[@]}; i++ ))

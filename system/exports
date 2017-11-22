@@ -7,3 +7,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export NVM_DIR="$PATH:$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+#coreutils
+export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`

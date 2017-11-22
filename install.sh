@@ -99,10 +99,13 @@ ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
 # Custom settings
 log "Custom" "Settings..."
 
+# macOS preference
 . "$DOTFILES_DIR/etc/macos/default"
 . "$DOTFILES_DIR/etc/macos/login"
 . "$DOTFILES_DIR/etc/macos/dock"
 
+# Dev settings
+. "$DOTFILES_DIR/etc/dev/chisel"
 
 success "Dotfiles installed!"
 

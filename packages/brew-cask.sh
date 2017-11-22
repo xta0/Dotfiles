@@ -23,33 +23,28 @@ apps=(
   spotify
   amethyst
   handbrake
-  vagrant
-  vagrant-manager
   go2shell
   cleanmymac
   electronic-wechat
+  bitbar
+  keepingyouawake
   SPlayerX
   FutuNiuniu
   Pomotodo
   YoudaoNote
   youdaodict
-  keepingyouawake
+
 )
 
 brew cask install --appdir="/Applications" "${apps[@]}"
 
 quick_look=( 
-  qlstephen 
   qlmarkdown 
   quicklook-json 
-  qlprettypatch 
-  quicklook-csv 
-  betterzipql 
+  quicklook-csv  
   qlimagesize 
-  webpquicklook 
-  qlvideo
 )
-brew cask install "${quick_look[@]}"
+brew cask --appdir="/Applications" install "${quick_look[@]}"
  
 
 sleep 1

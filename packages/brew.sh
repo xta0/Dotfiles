@@ -15,13 +15,15 @@ tools=(
     tmux 
     htop 
     readline 
-    dockutil 
+    guetzli
+    chisel
     neofetch
 )
 
 # Install tools
 brew install "${tools[@]}"
 export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`
+export DOTFILES_BREW_PREFIX_CHISEL=`brew --prefix chisel`
 
 brew tap homebrew/science
 

@@ -7,6 +7,6 @@ rvm install 2.3
 rvm use 2.3 --default
 
 #Install Gem
-gems=( nokogiri cocoapods )
+gems=( nokogiri cocoapods houston cupertino )
 
 gem install "${gems[@]}"

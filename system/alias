@@ -23,7 +23,6 @@ alias ls='ls -GFh'
 alias ll="ls -lA"
 alias lt="ls -lhAtr"
 alias ld="ls -ld"
-alias lpm="stat -c '%a %n' *"
 
 #######
 # cat

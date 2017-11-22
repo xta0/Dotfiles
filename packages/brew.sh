@@ -49,4 +49,3 @@ sleep 1
 # Remove outdated versions from the cellar.
 brew cleanup
 
-echo "Brew Install Finished!"

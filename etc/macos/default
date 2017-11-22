@@ -1,5 +1,3 @@
-echo "Setting Default MacOS Preferences..."
-
 COMPUTER_NAME="X0"
 
 osascript -e 'tell application "System Preferences" to quit'
@@ -502,4 +500,3 @@ for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" 
   killall "${app}" &> /dev/null
 done
 
-echo "Done Setting Default MacOS Preferences"

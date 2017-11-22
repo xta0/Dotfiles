@@ -19,7 +19,7 @@ export ZSH_CUSTOM=${ZSH}/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z )
+plugins=( git z )
 
 #run oh-my-zsh config
 . $ZSH/oh-my-zsh.sh

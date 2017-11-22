@@ -82,7 +82,7 @@ log "Installing" "Packages..."
 
 . "$DOTFILES_DIR/packages/zsh.sh"
 . "$DOTFILES_DIR/packages/brew.sh"
-# . "$DOTFILES_DIR/macos/brew-cask"
+. "$DOTFILES_DIR/macos/brew-cask"
 . "$DOTFILES_DIR/packages/gem.sh"
 . "$DOTFILES_DIR/packages/npm.sh"
 

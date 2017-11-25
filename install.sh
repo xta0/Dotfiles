@@ -11,7 +11,7 @@ log()     {        paint 'cyan'  "DotFile: $*"        }
 error()   { echo ; paint 'red'   "DotFile: $*" ; echo }
 success() { echo ; paint 'green' "DotFile: $*" ; echo }
 
-main(){
+
 
 #Check Environment
 
@@ -86,6 +86,4 @@ log "Custom Settings..."
 
 success "Dotfiles installed!"
 
-}
 
-main

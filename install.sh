@@ -3,25 +3,37 @@
 # enable exist on error
 set -e
 
-msg() {
-    echo "$fg[$1]${@:2}$reset_color"
+init(){
+    #colors
+    RCol='\e[0m'
+    Red='\e[0;31m'; 
+    Gre='\e[0;32m';
+    Yel='\e[0;33m';
+    Blu='\e[0;34m';
+    On_Bla='\e[40m';    
+    BIGre='\e[1;92m';
 }
 
 log() {
-    msg 'cyan'  "DotFile: $*"
+    echo -e "${Blu}DotFiles:${RCol} '$*' "
 }
 
 error() {
-    echo ; msg 'red'   "DotFile: $*" 
+    echo ; 
+    echo -e "${Red}DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
 }
 
 success() { 
-    echo ; msg 'green' "DotFile: $*"  
+    echo ; 
+    echo -e "${Gre}DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
 }
 
 warning() { 
-    echo ; msg 'yellow' "DotFile: $*"  
+    echo ; 
+    echo -e "${Yel}DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
 }
+
+init
 
 #Check Environment
 if [[ "$OSTYPE" != *"darwin"* ]];then
@@ -30,7 +42,7 @@ if [[ "$OSTYPE" != *"darwin"* ]];then
     exit 1
 fi
 
-log "Begin Install..."
+log "Begin Install Dotfiles"
 
 #Check if dotfile has been installed
 if [ ! -n "$DOTFILES_DIR" ]; then 
@@ -40,24 +52,32 @@ fi
 
 
 if [ -d "$DOTFILES_DIR" ]; then
-    warning "You already have dotfiles installed."
-    warning "You'll need to remove $DOTFILES_DIR if you want to re-install."
-    exit 1
+    warning "You already have dotfiles installed.$DOTFILES_DIR"
+    reply=$(bash -c 'read -r -p "Do you want to remove it?[y/N]: " tmp; echo $tmp')
+    if [[ ! $reply ]] || [[ $reply =~ ^[Yy]$ ]; then 
+        log "Removing ~/.dotfiles"
+        rm -rf ${DOTFILES_DIR}
+    else
+        log "Install canclled";sleep 1
+        exit 1
+    fi 
 fi
 
 
 umask g-w,o-w
 
 #Begin clone dotfile repo
-log "Cloning Dotfiles..."
+log "Cloning Dotfiles"
 
 hash git >/dev/null 2>&1 || {
-    error "Error: git is not installed!"
+    error "git is not installed!"
+    sleep 1
     exit 1
 }
 
 env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
-    error "Error: git clone of Dotfile repo failed!"
+    error "git clone of Dotfile repo failed!"
+    sleep 1
     exit 1
 }
 
@@ -72,18 +92,28 @@ log "Installing Packages..."
 
 
 # Create symlinks
-log "Creating Symlinks..."
+dotfiles=(
+    profile
+    bashrc
+    zshrc
+    gitconfig
+    gitignore_global
+)
 
-ln -svf "$DOTFILES_DIR/dotfiles/.profile" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.bashrc" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.zshrc" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.gitconfig" ~
-ln -svf "$DOTFILES_DIR/dotfiles/.gitignore_global" ~
+for dotfile in ${dotfiles[@]}
+do
+    orig_dotfile="${HOME}/.${dotfile}"
+    if [ -f $orig_dotfile ]; then
+        log "Found ${orig_dotfile} ${BIGre}Backing up${RCol} to ${Yel} ${orig_dotfile}.pre ${RCol}" 
+        mv $orig_dotfile $orig_dotfile.pre;
+    fi
+    log "Creating Symlinks" 
+    ln -svf "$DOTFILES_DIR/dotfiles/.$dotfile" ${HOME}
+done
+
 
 # Custom settings
-log "Custom Settings..."
-
-# macOS preference
+log "Runing Custom Settings"
 . "$DOTFILES_DIR/etc/macos/default"
 . "$DOTFILES_DIR/etc/macos/login"
 . "$DOTFILES_DIR/etc/macos/dock"
@@ -91,4 +121,4 @@ log "Custom Settings..."
 # Dev settings
 . "$DOTFILES_DIR/etc/dev/chisel"
 
-success "Done! Reload your terminal."
+success "Done! Now reload your terminal."

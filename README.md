@@ -51,7 +51,13 @@ Sync ssh and other private files with drop-box
 
 ## Uninstall
 
-Simply run the `uninstall.sh` , The dotfile fold will be removed from `~/`
+Run
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/unistall.sh)"
+```
+
+
 
 ## Resources
 

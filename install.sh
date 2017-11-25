@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set -e
-
 init(){
     
     if which tput >/dev/null 2>&1; then

@@ -54,7 +54,7 @@ Sync ssh and other private files with drop-box
 Run
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/unistall.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/uninstall.sh)"
 ```
 
 

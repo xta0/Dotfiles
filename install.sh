@@ -4,33 +4,48 @@
 set -e
 
 init(){
-    #colors
-    RCol='\e[0m'
-    Red='\e[0;31m'; 
-    Gre='\e[0;32m';
-    Yel='\e[0;33m';
-    Blu='\e[0;34m';
-    On_Bla='\e[40m';    
-    BIGre='\e[1;92m';
+    
+    if which tput >/dev/null 2>&1; then
+      ncolors=$(tput colors)
+    fi
+
+    if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+        Red="$(tput setaf 1)"
+        Gre="$(tput setaf 2)"
+        Yel="$(tput setaf 3)"
+        Blu="$(tput setaf 4)"
+        Bold="$(tput bold)"
+        RCol="$(tput sgr0)"
+        On_Bla="$(tput setab 0)"
+  else
+        #colors
+        RCol="";
+        Red="";
+        Gre="";
+        Yel="";
+        Blu="";
+        Bold=""
+        On_Bla=""
+  fi
 }
 
 log() {
-    echo -e "${Blu}DotFiles:${RCol} '$*' "
+    echo -e "${Blu}${On_Bla}DotFiles:${RCol} '$*' "
 }
 
 error() {
     echo ; 
-    echo -e "${Red}DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
+    echo -e "${Red}${On_Bla}DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
 }
 
 success() { 
     echo ; 
-    echo -e "${Gre}DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
+    echo -e "${Gre}${On_Bla}DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
 }
 
 warning() { 
     echo ; 
-    echo -e "${Yel}DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
+    echo -e "${Yel}${On_Bla}DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
 }
 
 init

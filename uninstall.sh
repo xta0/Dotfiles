@@ -1,5 +1,5 @@
 msg(){
-    echo -e "Dotfiles: $*"
+    echo "Dotfiles: $*"
 }
 confirmation=$(bash -c 'read -r -p "Are you sure you want to remove dotfiles? [y/N]: " tmp; echo $tmp')
 if [ "$confirmation" != y ] && [ "$confirmation" != Y ]; then
@@ -20,6 +20,9 @@ dotfiles=(
     gitignore_global
 )
 
+backup_dir=${${HOME}/.dotfile_backup}
+mkdir -p $backup_dir
+
 for dotfile in ${dotfiles[@]}
 do
     pre_dotfile="${HOME}/.${dotfile}.pre"
@@ -28,7 +31,7 @@ do
         if [ -f .$dotfile ] || [ -h .$dotfile ]; then 
             dotfile_to_save=".dotfile.$dotfile-uninstalled-$(date +%Y%m%d%H%M%S)";
             msg "Found ~/.$dotfile -- Renaming to ~/${dotfile_to_save}";
-            mv ~/.$dotfile ~/"${dotfile_to_save}";
+            mv ~/.$dotfile ~/backup_dir/"${dotfile_to_save}";
         fi  
         
         mv $pre_dotfile ${HOME}/.$dotfile

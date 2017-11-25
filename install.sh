@@ -3,15 +3,27 @@
 # enable exist on error
 set -x
 
-msg()     { echo "$fg[$1]${@:2}$reset_color" }
-log()     {        msg 'cyan'  "DotFile: $*"        }
-error()   { echo ; msg 'red'   "DotFile: $*" ; echo }
-success() { echo ; msg 'green' "DotFile: $*" ; echo }
+msg() {
+    echo "$fg[$1]${@:2}$reset_color"
+}
 
+log() {
+    msg 'cyan'  "DotFile: $*"
+}
 
+error() {
+    echo ; msg 'red'   "DotFile: $*" 
+}
+
+success() { 
+    echo ; msg 'green' "DotFile: $*"  
+}
+
+warning() { 
+    echo ; msg 'yellow' "DotFile: $*"  
+}
 
 #Check Environment
-
 if [[ "$OSTYPE" != *"darwin"* ]];then
     error "Current OS Type is not MacOS"
     sleep 1
@@ -21,12 +33,10 @@ fi
 log "Begin Install..."
 
 #Check if dotfile has been installed
-log "Checking" "directory..."
 if [ ! -n "$DOTFILES_DIR" ]; then 
     DOTFILES_DIR=${HOME}/.dotfiles
     export DOTFILES_DIR
 fi
-
 
 
 if [ -d "$DOTFILES_DIR" ]; then
@@ -42,12 +52,12 @@ umask g-w,o-w
 log "Cloning Dotfiles..."
 
 hash git >/dev/null 2>&1 || {
-    error "Error: git is not installed\n"
+    error "Error: git is not installed!"
     exit 1
 }
 
 env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
-    error "Error: git clone of oh-my-zsh repo failed"
+    error "Error: git clone of Dotfile repo failed!"
     exit 1
 }
 
@@ -81,4 +91,4 @@ log "Custom Settings..."
 # Dev settings
 . "$DOTFILES_DIR/etc/dev/chisel"
 
-success "Dotfiles installed!"
+success "Done! Reload your terminal."

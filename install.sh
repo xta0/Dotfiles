@@ -3,13 +3,10 @@
 # enable exist on error
 set -x
 
-msg() {
-   echo "$fg[$1]${@:2}$reset_color"
-}
-
-log()     {        paint 'cyan'  "DotFile: $*"        }
-error()   { echo ; paint 'red'   "DotFile: $*" ; echo }
-success() { echo ; paint 'green' "DotFile: $*" ; echo }
+msg()     { echo "$fg[$1]${@:2}$reset_color" }
+log()     {        msg 'cyan'  "DotFile: $*"        }
+error()   { echo ; msg 'red'   "DotFile: $*" ; echo }
+success() { echo ; msg 'green' "DotFile: $*" ; echo }
 
 
 
@@ -85,5 +82,3 @@ log "Custom Settings..."
 . "$DOTFILES_DIR/etc/dev/chisel"
 
 success "Dotfiles installed!"
-
-

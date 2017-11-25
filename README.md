@@ -68,6 +68,5 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/unistall.sh)"
 ## Todo
 
 - dotfile commands
-- uninstall script
 - vimrc, tmuxrc
 - docker test environment

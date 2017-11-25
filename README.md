@@ -12,10 +12,10 @@ sudo softwareupdate -i -a
 xcode-select --install
 ```
 
-- Install Dotfiels 
+- Install Dotfiles
 
 ```
-sh -c "`curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh`"
+sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh)"
 ```
 
 ## Contains
@@ -27,12 +27,16 @@ sh -c "`curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh`"
     - Programming language I use every day.
         
 - ZSH
-    - A forked [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) repo with customized themes in it 
+    - A forked [oh-my-zsh](https://github.com/xta0/oh-my-zsh) repo with customized themes in it 
 
 ### Dotfiles
 
 - `.zshrc` contains themes,plugins and loads the `.profile` file.
-- `.profile` loads bunch of `alias`, `functions`, `exports` and sets the `PATH` variable
+- `.profile` loads a bunch of files: 
+    - `alias`
+    - `functions`
+    - `exports` 
+    - sets the `PATH` variable
   
 ## Custom Settings
 
@@ -57,7 +61,6 @@ Simply run the `uninstall.sh` , The dotfile fold will be removed from `~/`
 
 ## Todo
 
-- color output
 - dotfile commands
 - uninstall script
 - vimrc, tmuxrc

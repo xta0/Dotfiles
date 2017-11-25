@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # enable exist on error
-set -x
+set -e
 
 msg() {
     echo "$fg[$1]${@:2}$reset_color"
@@ -66,7 +66,7 @@ log "Installing Packages..."
 
 . "$DOTFILES_DIR/packages/zsh.sh"
 . "$DOTFILES_DIR/packages/brew.sh"
-. "$DOTFILES_DIR/macos/brew-cask"
+. "$DOTFILES_DIR/macos/brew-cask.sh"
 . "$DOTFILES_DIR/packages/gem.sh"
 . "$DOTFILES_DIR/packages/npm.sh"
 

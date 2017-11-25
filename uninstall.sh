@@ -25,20 +25,18 @@ do
     if [ -f $pre_dotfile ] || [ -h $pre_dotfile ]; then
         echo "Found ${pre_dotfile} -- Restoring to .${dotfile}"
         if [ -f .$dotfile ] || [ -h .$dotfile ]; then 
-            dotfile_to_save=".xta0.$dotfile-uninstalled-$(date +%Y%m%d%H%M%S)";
+            dotfile_to_save=".dotfile.$dotfile-uninstalled-$(date +%Y%m%d%H%M%S)";
             echo "Found ~/.$dotfile -- Renaming to ~/${dotfile_to_save}";
             mv ~/.$dotfile ~/"${dotfile_to_save}";
         fi  
         
         mv $pre_dotfile ${HOME}/.$dotfile
-        echo "Your original $dotfile was restored. Please restart your session."
+        echo "Your original $dotfile was restored."
     fi
 done
 
 
 #restore to bash
-chsh >/dev/null 2>&1; then
-
 if hash chsh >/dev/null 2>&1; then
     echo "Switching back to bash"
     chsh -s /bin/bash

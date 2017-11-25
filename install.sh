@@ -28,22 +28,22 @@ init(){
 }
 
 log() {
-    echo -e "${Blu}${On_Bla}DotFiles:${RCol} '$*' "
+    echo "${Blu}${On_Bla}DotFiles:${RCol} '$*' "
 }
 
 error() {
     echo ; 
-    echo -e "${Red}${On_Bla}DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
+    echo "${Red}${On_Bla}DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
 }
 
 success() { 
     echo ; 
-    echo -e "${Gre}${On_Bla}DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
+    echo "${Gre}${On_Bla}DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
 }
 
 warning() { 
     echo ; 
-    echo -e "${Yel}${On_Bla}DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
+    echo "${Yel}${On_Bla}DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
 }
 
 init
@@ -67,7 +67,7 @@ fi
 if [ -d "$DOTFILES_DIR" ]; then
     warning "You already have dotfiles installed.$DOTFILES_DIR"
     reply=$(bash -c 'read -r -p "Do you want to remove it?[y/N]: " tmp; echo $tmp')
-    if [[ ! $reply ]] || [[ $reply =~ ^[Yy]$ ]; then 
+    if [[ ! $reply ]] || [[ $reply =~ ^[Yy]$ ]]; then 
         log "Removing ~/.dotfiles"
         rm -rf ${DOTFILES_DIR}
     else
@@ -115,7 +115,7 @@ log "Installing Packages..."
 
 # for dotfile in ${dotfiles[@]}
 log "Creating Symlinks"
-for dotfile in $(ls ${DOTFILES_DIR}/dotfiles/)
+for dotfile in $(ls "${DOTFILES_DIR}/dotfiles/")
 do
     orig_dotfile="${HOME}/.${dotfile}"
     if [ -f $orig_dotfile ]; then

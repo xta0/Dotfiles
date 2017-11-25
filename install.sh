@@ -1,4 +1,7 @@
 #! /bin/bash
+
+set -e
+
 init(){
     
     if which tput >/dev/null 2>&1; then
@@ -6,20 +9,21 @@ init(){
     fi
 
     if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+        
+        RCol="$(tput sgr0)"
         Red="$(tput setaf 1)"
         Gre="$(tput setaf 2)"
-        Yel="$(tput setaf 3)"
         Blu="$(tput setaf 4)"
+        Yel="$(tput setaf 3)"
         Bold="$(tput bold)"
-        RCol="$(tput sgr0)"
         On_Bla="$(tput setab 0)"
   else
         #colors
         RCol="";
         Red="";
         Gre="";
-        Yel="";
         Blu="";
+        Yel="";
         Bold=""
         On_Bla=""
   fi
@@ -103,23 +107,25 @@ log "Installing Packages..."
 
 
 # Create symlinks
-dotfiles=(
-    profile
-    bashrc
-    zshrc
-    gitconfig
-    gitignore_global
-)
+# dotfiles=(
+#     profile
+#     bashrc
+#     zshrc
+#     gitconfig
+#     gitignore_global
+# )
 
-for dotfile in ${dotfiles[@]}
+# for dotfile in ${dotfiles[@]}
+log "Creating Symlinks"
+for dotfile in $(ls ${DOTFILES_DIR}/dotfiles/)
 do
     orig_dotfile="${HOME}/.${dotfile}"
     if [ -f $orig_dotfile ]; then
-        log "Found ${orig_dotfile} ${BIGre}Backing up${RCol} to ${Yel} ${orig_dotfile}.pre ${RCol}" 
+        log "Found ${orig_dotfile} Backing up to ${orig_dotfile}.pre" 
         mv $orig_dotfile $orig_dotfile.pre;
     fi
-    log "Creating Symlinks" 
-    ln -svf "$DOTFILES_DIR/dotfiles/.$dotfile" ${HOME}
+    log "Creating Symlink: ${Gre} ${HOME}/.$dotfile ${RCol}" 
+    ln -svf "$DOTFILES_DIR/dotfiles/$dotfile" ${HOME}/.$dotfile
 done
 
 

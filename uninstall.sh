@@ -20,7 +20,7 @@ dotfiles=(
     gitignore_global
 )
 
-backup_dir=${${HOME}/.dotfile_backup}
+backup_dir="${HOME}/.dotfile_backup"
 mkdir -p $backup_dir
 
 for dotfile in ${dotfiles[@]}

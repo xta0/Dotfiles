@@ -1,7 +1,6 @@
 msg(){
     echo -e "Dotfiles: $*"
 }
-
 confirmation=$(bash -c 'read -r -p "Are you sure you want to remove dotfiles? [y/N]: " tmp; echo $tmp')
 if [ "$confirmation" != y ] && [ "$confirmation" != Y ]; then
   msg "Uninstall cancelled"

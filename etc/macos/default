@@ -1,4 +1,4 @@
-COMPUTER_NAME="X0"
+COMPUTER_NAME="xTa0"
 
 osascript -e 'tell application "System Preferences" to quit'
 

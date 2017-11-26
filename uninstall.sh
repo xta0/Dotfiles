@@ -27,12 +27,12 @@ do
         rm -rf ~/.$dotfile
     fi 
     
-    pre_dotfile="~/.${dotfile}.pre"
+    pre_dotfile=~/.$dotfile.pre
 
     if [ -f $pre_dotfile ] || [ -h $pre_dotfile ]; then
         
         msg "Found ${pre_dotfile} -- Restoring to .${dotfile}"        
-        mv $pre_dotfile ${HOME}/.$dotfile
+        mv $pre_dotfile ~/.$dotfile
         msg "Your original $dotfile was restored."
     fi
 done

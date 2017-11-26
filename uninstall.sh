@@ -21,7 +21,7 @@ dotfiles=(
 )
 for dotfile in ${dotfiles[@]}
 do
-    if [ -f ~/.$dotfile ] || [ -h ~/.$dotfile];then 
+    if [ -f ~/.$dotfile ] || [ -h ~/.$dotfile ];then 
         
         echo "Deleting the symlinked dotfile:$dotfile"
         rm -rf ~/.$dotfile

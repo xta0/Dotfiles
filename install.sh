@@ -11,39 +11,37 @@ init(){
         RCol="$(tput sgr0)"
         Red="$(tput setaf 1)"
         Gre="$(tput setaf 2)"
-        Blu="$(tput setaf 4)"
         Yel="$(tput setaf 3)"
-        Bold="$(tput bold)"
+        Cyn="$(tput setaf 6)"
         On_Bla="$(tput setab 0)"
   else
         #colors
         RCol="";
         Red="";
         Gre="";
-        Blu="";
+        Cyn="";
         Yel="";
-        Bold=""
-        On_Bla=""
+        On_Bla="";
   fi
 }
 
 log() {
-    echo "${Blu}${On_Bla}DotFiles:${RCol} '$*' "
+    echo "${Cyn}${On_Bla}==|DotFiles:${RCol} '$*' "
 }
 
 error() {
     echo ; 
-    echo "${Red}${On_Bla}DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
+    echo "${Red}${On_Bla}==|DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
 }
 
 success() { 
     echo ; 
-    echo "${Gre}${On_Bla}DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
+    echo "${Gre}${On_Bla}==|DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
 }
 
 warning() { 
     echo ; 
-    echo "${Yel}${On_Bla}DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
+    echo "${Yel}${On_Bla}==|DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
 }
 
 init
@@ -95,12 +93,17 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
 }
 
 #Install Packages
-log "Installing Packages..."
-
+log "Configuring ZSH"
 . "$DOTFILES_DIR/packages/zsh.sh"
+
+log "Installing homebrew packages"
 . "$DOTFILES_DIR/packages/brew.sh"
 # . "$DOTFILES_DIR/packages/brew-cask.sh"
+
+log "Installing Ruby gem packages"
 . "$DOTFILES_DIR/packages/gem.sh"
+
+log "Install NPM package"
 . "$DOTFILES_DIR/packages/npm.sh"
 
 
@@ -128,12 +131,15 @@ done
 
 
 # Custom settings
-log "Runing Custom Settings"
+log "Setting macOS preferences"
 . "$DOTFILES_DIR/etc/macos/default"
+log "Setting macOS login items"
 . "$DOTFILES_DIR/etc/macos/login"
+log "Setting macOS docks"
 . "$DOTFILES_DIR/etc/macos/dock"
 
 # Dev settings
+log "Setting a bunch of dev tools"
 . "$DOTFILES_DIR/etc/dev/chisel"
 
 success "Done! Now reload your terminal."

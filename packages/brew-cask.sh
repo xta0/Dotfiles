@@ -18,6 +18,7 @@ apps=(
   go2shell
   cleanmymac
   electronic-wechat
+  fliqlo
   bitbar
   keepingyouawake
   SPlayerX
@@ -25,7 +26,6 @@ apps=(
   Pomotodo
   YoudaoNote
   youdaodict
-
 )
 
 brew cask install --appdir="/Applications" "${apps[@]}"

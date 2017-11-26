@@ -143,3 +143,6 @@ log "Setting a bunch of dev tools"
 . "$DOTFILES_DIR/etc/dev/chisel"
 
 success "Done! Now reload your terminal."
+
+log "Changing Current Shell to ZSH and reload your iterm"
+chsh -s $(which zsh)

@@ -21,13 +21,13 @@ dotfiles=(
 )
 for dotfile in ${dotfiles[@]}
 do
-    if [ -f ~/.$dotfile];then 
+    if [ -f ~/.$dotfile ] || [ -h ~/.$dotfile];then 
         
         echo "Deleting the symlinked dotfile:$dotfile"
         rm -rf ~/.$dotfile
     fi 
     
-    pre_dotfile="${HOME}/.${dotfile}.pre"
+    pre_dotfile="~/.${dotfile}.pre"
 
     if [ -f $pre_dotfile ] || [ -h $pre_dotfile ]; then
         

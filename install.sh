@@ -121,7 +121,7 @@ log "Creating Symlinks"
 for dotfile in $(ls "${DOTFILES_DIR}/dotfiles/")
 do
     orig_dotfile="${HOME}/.${dotfile}"
-    if [ -f $orig_dotfile ]; then
+    if [ -f $orig_dotfile ] || [ -h $orig_dofile ]; then
         log "Found ${orig_dotfile} Backing up to ${orig_dotfile}.pre" 
         mv $orig_dotfile $orig_dotfile.pre;
     fi

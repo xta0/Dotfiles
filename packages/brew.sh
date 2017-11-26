@@ -5,6 +5,15 @@
 brew update
 brew upgrade
 
+# Cask
+brew tap caskroom/cask
+brew tap caskroom/fonts
+brew tap caskroom/versions
+brew tap homebrew/science
+
+#install brew-cask
+brew install 
+
 tools=(
     coreutils 
     git 
@@ -18,6 +27,8 @@ tools=(
     guetzli
     chisel
     neofetch
+    dockutil
+    brew-cask
 )
 
 # Install tools
@@ -25,19 +36,19 @@ brew install "${tools[@]}"
 export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`
 export DOTFILES_BREW_PREFIX_CHISEL=`brew --prefix chisel`
 
-brew tap homebrew/science
+brew cask install java
 
 pls=( 
     haskell-stack 
     smlnj 
     clisp 
     mit-scheme 
-    scala 
     lua 
     python 
     python3 
     golang 
     octave
+    scala
 ) 
 
 # Install tools
@@ -45,6 +56,7 @@ brew install "${pls[@]}"
 
 # sleep 1
 sleep 1
+
 
 # Remove outdated versions from the cellar.
 brew cleanup

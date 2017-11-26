@@ -1,12 +1,4 @@
 
-# Cask
-brew tap caskroom/cask
-brew tap caskroom/fonts
-brew tap caskroom/versions
-brew tap homebrew/science
-
-#install brew-cask
-brew install brew-cask
 
 # Install apps for work
 apps=(

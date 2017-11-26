@@ -19,10 +19,6 @@ dotfiles=(
     gitconfig
     gitignore_global
 )
-
-backup_dir="${HOME}/.dotfile_backup"
-mkdir -p $backup_dir
-
 for dotfile in ${dotfiles[@]}
 do
     if [ -f ~/.$dotfile];then 
@@ -32,7 +28,7 @@ do
     fi 
     
     pre_dotfile="${HOME}/.${dotfile}.pre"
-    
+
     if [ -f $pre_dotfile ] || [ -h $pre_dotfile ]; then
         
         msg "Found ${pre_dotfile} -- Restoring to .${dotfile}"        

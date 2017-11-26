@@ -8,6 +8,7 @@ git clone "https://github.com/xta0/oh-my-zsh.git" $ZSH || {
 export ZSH_CUSTOM="${ZSH}/custom"
 
 # Make zsh default shell
+echo "Changing shell to ZSH"
 sudo chsh -s $(which zsh)
 
 #Install plugins

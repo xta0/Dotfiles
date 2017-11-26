@@ -2,9 +2,10 @@
 brew install gpg2
 \curl -sSL https://get.rvm.io | bash -s stable
 
-#nvm 
-export NVM_DIR="$PATH:$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 
 #Install Ruby
 rvm install 2.3

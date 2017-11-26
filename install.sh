@@ -98,7 +98,7 @@ log "Configuring ZSH"
 
 log "Installing homebrew packages"
 . "$DOTFILES_DIR/packages/brew.sh"
-# . "$DOTFILES_DIR/packages/brew-cask.sh"
+. "$DOTFILES_DIR/packages/brew-cask.sh"
 
 log "Installing Ruby gem packages"
 . "$DOTFILES_DIR/packages/gem.sh"

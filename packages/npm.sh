@@ -3,12 +3,14 @@
 brew install nvm
 
 #nvm 
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export DOTFILES_BREW_PREFIX_NVM=`brew --prefix nvm`
+if [ -f "$DOTFILES_BREW_PREFIX_NVM/nvm.sh" ]; then
+  export NVM_DIR=~/.nvm
+  source "$DOTFILES_BREW_PREFIX_NVM/nvm.sh"
+fi
 
 #install the latest node 
 nvm install node
-#nvm install 6
 
 #update npm
 npm install -g npm@latest

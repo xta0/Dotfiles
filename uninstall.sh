@@ -25,15 +25,17 @@ mkdir -p $backup_dir
 
 for dotfile in ${dotfiles[@]}
 do
-    pre_dotfile="${HOME}/.${dotfile}.pre"
-    if [ -f $pre_dotfile ] || [ -h $pre_dotfile ]; then
-        msg "Found ${pre_dotfile} -- Restoring to .${dotfile}"
-        if [ -f .$dotfile ] || [ -h .$dotfile ]; then 
-            dotfile_to_save=".dotfile.$dotfile-uninstalled-$(date +%Y%m%d%H%M%S)";
-            msg "Found ~/.$dotfile -- Renaming to ~/${dotfile_to_save}";
-            mv ~/.$dotfile ~/backup_dir/"${dotfile_to_save}";
-        fi  
+    if [ -f ~/.$dotfile];then 
         
+        echo "Deleting the symlinked dotfile:$dotfile"
+        rm -rf ~/.$dotfile
+    fi 
+    
+    pre_dotfile="${HOME}/.${dotfile}.pre"
+    
+    if [ -f $pre_dotfile ] || [ -h $pre_dotfile ]; then
+        
+        msg "Found ${pre_dotfile} -- Restoring to .${dotfile}"        
         mv $pre_dotfile ${HOME}/.$dotfile
         msg "Your original $dotfile was restored."
     fi

@@ -10,8 +10,6 @@ for DOTFILE in "$DOTFILES_DIR"/system/{exports,env,functions,,alias,alias_macos,
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
-
-
 unset DOTFILE
 
 export DOTFILES_DIR

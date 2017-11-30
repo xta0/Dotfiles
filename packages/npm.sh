@@ -10,10 +10,7 @@ if [ -f "$DOTFILES_BREW_PREFIX_NVM/nvm.sh" ]; then
 fi
 
 #install the latest node 
-nvm install node
-
-#update npm
-npm install -g npm@latest
+nvm install stable
 
 # Globally install with npm
 packages=( lodash request chalk async commander )

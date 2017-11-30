@@ -10,7 +10,9 @@ if [ -f "$DOTFILES_BREW_PREFIX_NVM/nvm.sh" ]; then
 fi
 
 #install the latest node 
-nvm install stable
+nvm deactivate
+nvm install 8.9.1
+nvm use --delete-prefix v8.9.1
 
 # Globally install with npm
 packages=( lodash request chalk async commander )

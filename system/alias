@@ -25,11 +25,6 @@ alias lt="ls -lhAtr"
 alias ld="ls -ld"
 
 #######
-# cat
-#######
-alias cat="ccat"
-
-#######
 # rm 
 #######
 alias rr="rm -rf"

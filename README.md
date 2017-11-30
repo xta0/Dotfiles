@@ -54,6 +54,25 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh)"
 - Dev
     - chisel
 
+
+## Dotfile Usage
+
+```
+> dotfile --help
+
+Usage: dotfile.sh <command>
+
+Commands:
+   upgrade          Pull the lastest commit from Github
+   clean            Clean up caches (brew, npm, gem, rvm)
+   list             Show installed packages (brew, gem, npm)
+   dock             Apply macOS Dock settings
+   edit             Open dotfiles in VSCode)
+   help             This help message
+   macos            Apply macOS system defaults
+   update           Update packages and pkg managers (OS, brew, npm, gem)
+```
+
 ## Uninstall
 
 ```
@@ -67,6 +86,4 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/uninstall.sh)"
 
 ## Todo
 
-- dotfile commands
-- vimrc, tmuxrc
 - docker test environment

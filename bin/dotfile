@@ -73,6 +73,7 @@ sub_clean () {
 }
 
 sub_list() {
+
   echo "HomeBrew:"
   brew list
   echo "------"

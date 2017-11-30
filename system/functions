@@ -1,4 +1,8 @@
 
+# add to path
+add2path(){
+    [ -d $1 ] && PATH="$1:$PATH"
+}
 
 
 # Create a new directory and enter it

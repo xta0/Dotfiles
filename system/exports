@@ -3,15 +3,9 @@
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-#coreutils
-export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`
-
 #nvm
 export DOTFILES_BREW_PREFIX_NVM=`brew --prefix nvm`
 if [ -f "$DOTFILES_BREW_PREFIX_NVM/nvm.sh" ]; then
   export NVM_DIR=~/.nvm
   source "$DOTFILES_BREW_PREFIX_NVM/nvm.sh"
 fi
-
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

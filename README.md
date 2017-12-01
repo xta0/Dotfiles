@@ -46,9 +46,13 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh)"
     - dock: dock items
 - VSCode
     - use [settings sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
-        - [gist file](https://gist.github.com/xta0/97203d8a0120dad31ee843aca06c36fa)
-    - manually
-        - file
+    - use [gist file](https://gist.github.com/xta0/60e005266cb78e9fdf90fde1df980023)
+        - Location: `/Users/xxx/Library/Application Support/Code/User`
+            - `settings.json`
+            - `keybinding.json`
+            - snippets
+                - `cpp.json`
+                - `html.json`
 - iTerm
     - color scheme
 - Dev

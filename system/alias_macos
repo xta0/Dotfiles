@@ -2,6 +2,9 @@
 # macOS #
 #########
 
+#cat
+alias cat="ccat"
+
 #copy
 alias cpwd="pwd|tr -d '\n'|pbcopy"
 

@@ -55,6 +55,8 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh)"
                 - `html.json`
 - iTerm
     - color scheme
+        - [atom-one-dark](https://github.com/xta0/Dotfiles/blob/master/etc/iterm/atom-one-dark.itermcolors)
+        - [dimmed-monokai](https://github.com/xta0/Dotfiles/blob/master/etc/iterm/dimmed-monokai.itermcolors)
 - Dev
     - chisel
 

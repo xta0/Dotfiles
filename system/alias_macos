@@ -9,8 +9,10 @@ alias cat="ccat"
 alias cpwd="pwd|tr -d '\n'|pbcopy"
 
 # quick enter
-alias st="cd ~/Desktop"
-alias coding="cd ~/Coding"
+alias dt="cd ~/Desktop"
+alias dc="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias pj="cd ~/Projects"
 
 
 # quick open

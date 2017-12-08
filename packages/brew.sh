@@ -19,6 +19,7 @@ tools=(
     git 
     openssl 
     wget 
+    ccat
     xz 
     tree 
     tmux 

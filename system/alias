@@ -30,6 +30,11 @@ alias ld="ls -ld"
 alias rr="rm -rf"
 
 #######
+# search
+#######
+alias search='find /Users -name'
+
+#######
 # C++
 #######
 alias cpp='c++ -std=c++11 -stdlib=libc++'

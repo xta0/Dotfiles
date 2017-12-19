@@ -5,14 +5,14 @@
 brew update
 brew upgrade
 
-# Cask
+#install brew-cask
+brew install brew-cask
+
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap homebrew/science
 
-#install brew-cask
-brew install brew-cask 
 brew cask install java
 
 tools=(

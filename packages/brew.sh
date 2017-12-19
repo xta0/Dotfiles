@@ -13,6 +13,7 @@ brew tap homebrew/science
 
 #install brew-cask
 brew install brew-cask 
+brew cask install java
 
 tools=(
     coreutils 
@@ -36,8 +37,6 @@ tools=(
 brew install "${tools[@]}"
 export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`
 export DOTFILES_BREW_PREFIX_CHISEL=`brew --prefix chisel`
-
-brew cask install java
 
 pls=( 
     r

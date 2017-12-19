@@ -12,6 +12,7 @@ apps=(
   sourcetree
   virtualbox
   visual-studio-code
+  rstudio
   spotify
   amethyst
   handbrake

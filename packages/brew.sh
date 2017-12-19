@@ -12,7 +12,7 @@ brew tap caskroom/versions
 brew tap homebrew/science
 
 #install brew-cask
-brew install 
+brew install brew-cask 
 
 tools=(
     coreutils 
@@ -29,7 +29,7 @@ tools=(
     chisel
     neofetch
     dockutil
-    brew-cask
+    xquartz
 )
 
 # Install tools
@@ -40,6 +40,7 @@ export DOTFILES_BREW_PREFIX_CHISEL=`brew --prefix chisel`
 brew cask install java
 
 pls=( 
+    r
     haskell-stack 
     smlnj 
     clisp 

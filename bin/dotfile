@@ -20,14 +20,17 @@ sub_help () {
 
 sub_upgrade (){
   
-  log "Updating Dotfiles"
+  log "updating oh-my-zsh..."
+  cd $ZSH
+  git pull origin master || {
+    log "Could not install Oh My Zsh" >/dev/stderr
+  }
+
+  log "updating dotfiles..."
   cd ${DOTFILES_DIR}
-  if git pull --rebase --stat origin master 
-  then 
-    log "Dotfiles have been updated. Reload your terminal."
-  else 
+  git pull --rebase --stat origin master || {
     log "There was an error updating. Try again later?"
-  fi
+  }
 }
 
 sub_edit () {

@@ -84,8 +84,22 @@ convert(){
 }
 
 # Quick Push 
-gitpush(){
+push(){
+
+  git status 
+
+  reply=$(bash -c 'read -r -p "Are you sure you want to commit? [y/N]: " tmp; echo $tmp')
+  if [ "$reply" != y ] && [ "$reply" != Y ]; then
+    exit
+  fi
+
+  if [ $# == 0 ] then;
+    $1="update"
+    $2="master"
+  fi 
+
   git add .
-  git commit -m "update"
-  git push origin master 
+  git commit -m $1
+  git push origin $2
+
 }

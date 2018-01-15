@@ -20,6 +20,19 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh)"
 
 ## Contains
 
+```
+├── bin
+├── dotfiles
+├── etc
+│   ├── dev
+│   ├── iterm
+│   └── macos
+├── install
+│   └── oh-my-zsh
+├── packages
+└── system
+```
+
 ### Packages
 
 - Homebrew

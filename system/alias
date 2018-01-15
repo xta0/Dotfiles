@@ -37,7 +37,9 @@ alias search='find /Users -name'
 #######
 # C++
 #######
-alias cpp='c++ -std=c++11 -stdlib=libc++'
+alias cpp='clang++ -std=c++11 -stdlib=libc++'
+
+
 
 
 

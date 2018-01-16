@@ -94,12 +94,15 @@ push(){
   fi
 
   if [ $# == 0 ]; then
-    $1="update"
-    $2="master"
+    msg="update"
+    branch=master
+  else
+    msg=$1
+    branch=$2
   fi 
 
   git add .
-  git commit -m $1
-  git push origin $2
+  git commit -m "${msg}"
+  git push origin $branch
 
 }

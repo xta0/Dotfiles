@@ -16,7 +16,7 @@ apps=(
   spotify
   amethyst
   handbrake
-  go2shell
+  xmind
   cleanmymac
   electronic-wechat
   fliqlo

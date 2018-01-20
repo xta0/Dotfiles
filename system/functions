@@ -106,3 +106,14 @@ push(){
   git push origin $branch
 
 }
+
+pull(){
+  
+  if [ $# == 0 ]; then
+    branch="master"
+  else
+    branch=$1
+  fi
+  git pull origin $branch
+
+}

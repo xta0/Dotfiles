@@ -17,7 +17,7 @@ alias pj="cd ~/Projects"
 
 # quick open
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
-alias macdown="open -a ~/Applications/MacDown.app"
+alias markdown="open -a macdown"
 
 
 # Flush DNS

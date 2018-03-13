@@ -13,6 +13,7 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap homebrew/science
 
+#install Java
 brew cask install java
 
 tools=(

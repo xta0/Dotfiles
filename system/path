@@ -1,17 +1,16 @@
 
 add2path "/bin"
 add2path "/sbin"
-add2path "/usr/local/bin"
-add2path "/usr/local/sbin"
 add2path "/usr/bin"
 add2path "/usr/sbin"
+add2path "/usr/local/bin"
+add2path "/usr/local/sbin"
 add2path "${DOTFILES_BREW_PREFIX_COREUTILS}/libexec/gunbin"
 add2path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
 add2path "${DOTFILES_DIR}/bin"
+
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
-
 PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
 # Wrap up

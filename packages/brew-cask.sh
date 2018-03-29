@@ -17,10 +17,7 @@ apps=(
   amethyst
   handbrake
   xmind
-  cleanmymac
-  electronic-wechat
   fliqlo
-  bitbar
   keepingyouawake
   SPlayerX
   FutuNiuniu

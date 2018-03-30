@@ -15,7 +15,7 @@ nvm install 8.9.1
 nvm use --delete-prefix v8.9.1
 
 # Globally install with npm
-packages=( lodash request chalk async commander live-server )
+packages=( lodash request chalk async commander live-server jest )
 
 # install packages
 npm install -g "${packages[@]}"

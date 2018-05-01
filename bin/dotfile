@@ -10,12 +10,10 @@ sub_help () {
   echo "Commands:"
   echo "   upgrade          Pull the lastest commit from Github"
   echo "   clean            Clean up caches (brew, npm, gem, rvm)"
-  echo "   list             Show installed packages (brew, gem, npm)"
   echo "   dock             Apply macOS Dock settings"
   echo "   edit             Open dotfiles in VSCode)"
   echo "   help             This help message"
   echo "   macos            Apply macOS system defaults"
-  echo "   update           Update packages and pkg managers (OS, brew, npm, gem)"
 }
 
 sub_upgrade (){
@@ -38,32 +36,15 @@ sub_edit () {
 }
 
 sub_dock () { 
-
     log "Reloading Dock"
-    
     . "${DOTFILES_DIR}/etc/macos/dock" && echo "Dock reloaded."
 }
 
 
 sub_macos () {
-
     log "Reloading macOS preference"
-
     . "${DOTFILES_DIR}/etc/macos/default"
     echo "Done. Some changes may require a logout/restart to take effect."
-}
-
-sub_update () {
-
-  log "Updating Packages"
-
-  sudo softwareupdate -i -a
-  brew update
-  brew upgrade
-  npm install npm -g
-  npm update -g
-  gem update --system
-  gem update
 }
 
 sub_clean () {
@@ -75,14 +56,6 @@ sub_clean () {
   rvm cleanup all
 }
 
-sub_list() {
-
-  echo "HomeBrew:"
-  brew list
-  echo "------"
-  echo "Gem:"
-  gem list
-}
 
 init(){
     

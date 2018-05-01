@@ -1,6 +1,7 @@
 
 #Install NVM
 brew install nvm
+brew upgrade nvm
 
 #nvm 
 export DOTFILES_BREW_PREFIX_NVM=`brew --prefix nvm`

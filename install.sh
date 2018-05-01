@@ -106,6 +106,8 @@ log "Installing Ruby gem packages"
 log "Install NPM package"
 . "$DOTFILES_DIR/packages/npm.sh"
 
+# log "Installing Python pip packages"
+# . "$DOTFILES_DIR/package/pip.sh"
 
 # Create symlinks
 # dotfiles=(

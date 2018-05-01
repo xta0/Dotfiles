@@ -11,7 +11,8 @@ brew install brew-cask
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
-brew tap homebrew/science
+brew tap brewsci/homebrew-science
+brew tap brewsci/bio
 
 #install Java
 brew cask install java
@@ -32,6 +33,7 @@ tools=(
     neofetch
     dockutil
     xquartz
+    gcc
 )
 
 # Install tools

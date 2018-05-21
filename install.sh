@@ -93,18 +93,22 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
 }
 
 #Install Packages
-log "Configuring ZSH"
+log "Begin configuring ZSH..."
 . "$DOTFILES_DIR/packages/zsh.sh"
+log "Done."
 
-log "Installing homebrew packages"
+log "Begin installing homebrew packages..."
 . "$DOTFILES_DIR/packages/brew.sh"
 . "$DOTFILES_DIR/packages/brew-cask.sh"
+log "Done."
 
-log "Installing Ruby gem packages"
-. "$DOTFILES_DIR/packages/gem.sh"
+log "Begin installing Ruby..."
+. "$DOTFILES_DIR/packages/rvm.sh"
+log "Done."
 
-log "Install NPM package"
-. "$DOTFILES_DIR/packages/npm.sh"
+log "Begin Installing NVM..."
+. "$DOTFILES_DIR/packages/nvm.sh"
+log "Done."
 
 # log "Installing Python pip packages"
 # . "$DOTFILES_DIR/package/pip.sh"

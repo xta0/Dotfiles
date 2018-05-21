@@ -14,6 +14,7 @@ sub_help () {
   echo "   edit             Open dotfiles in VSCode)"
   echo "   help             This help message"
   echo "   macos            Apply macOS system defaults"
+  echo "   delete_node      Remove node,nvm,npm,npx
 }
 
 sub_upgrade (){
@@ -54,6 +55,13 @@ sub_clean () {
   npm cache clean --force
   gem cleanup
   rvm cleanup all
+}
+sub_delete_node(){
+
+  #delete system npm,npm
+  rm -rf /usr/local/bin/npx
+  rm -rf /usr/local/bin/npm
+  brew uninstall nvm
 }
 
 

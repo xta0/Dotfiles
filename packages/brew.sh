@@ -29,6 +29,7 @@ tools=(
     htop 
     readline 
     guetzli
+    xctool
     chisel
     neofetch
     dockutil

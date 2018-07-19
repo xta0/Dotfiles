@@ -62,7 +62,6 @@ brew install "${pls[@]}"
 # sleep 1
 sleep 1
 
-
 # Remove outdated versions from the cellar.
 brew cleanup
 

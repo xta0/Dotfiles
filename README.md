@@ -72,7 +72,7 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/install.sh)"
         - [dimmed-monokai](https://github.com/xta0/Dotfiles/blob/master/etc/iterm/dimmed-monokai.itermcolors)
 - Dev
     - chisel
-
+    - alcatraz
 
 ## Dotfile Usage
 

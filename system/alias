@@ -39,6 +39,11 @@ alias search='find /Users -name'
 #######
 alias cpp='clang++ -std=c++11 -stdlib=libc++'
 
+#######
+# swift
+#######
+alias swift='PATH="/usr/bin:$PATH" swift'
+
 
 
 

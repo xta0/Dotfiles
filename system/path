@@ -6,8 +6,9 @@ add2path "/usr/sbin"
 add2path "/usr/local/bin"
 add2path "/usr/local/sbin"
 add2path "${DOTFILES_BREW_PREFIX_COREUTILS}/libexec/gunbin"
-add2path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 add2path "${DOTFILES_DIR}/bin"
+add2path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755

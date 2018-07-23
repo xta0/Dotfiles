@@ -35,6 +35,7 @@ tools=(
     dockutil
     xquartz
     gcc
+    update_xcode_plugins
 )
 
 # Install tools

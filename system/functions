@@ -90,11 +90,16 @@ push(){
   git status 
   reply=$(bash -c 'read -r -p "Are you sure you want to commit? [y/N]: " tmp; echo $tmp')
   if [ "$reply" != y ] && [ "$reply" != Y ]; then
-    exit
+    return
   fi
 
-  branch_name=git symbolic-ref --short -q HEAD
-  msg=$1
+  branch_name=$(git symbolic-ref --short -q HEAD)
+  if [ $# -eq 0 ]
+  then
+    msg="Update(auto commit)"
+  else
+    msg=$1
+  fi
   git add -A
   git commit -m "${msg}"
   git push origin ${branch_name}
@@ -102,7 +107,7 @@ push(){
 
 pull(){
   
-  branch_name=git symbolic-ref --short -q HEAD
+  branch_name=$(git symbolic-ref --short -q HEAD)
   git pull origin $branch_name
 
 }

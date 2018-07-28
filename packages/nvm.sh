@@ -10,7 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 #install the latest node 
 nvm install 8.9.1
 # Globally install with npm
-packages=( eslint lodash request chalk async commander live-server bower )
+packages=( eslint lodash request chalk async commander live-server bower typescript)
 
 # install packages
 npm install -g "${packages[@]}"

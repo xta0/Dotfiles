@@ -27,6 +27,7 @@ tools=(
     tree 
     tmux 
     htop 
+    telnet
     readline 
     guetzli
     xctool

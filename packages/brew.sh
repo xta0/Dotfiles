@@ -35,7 +35,7 @@ tools=(
     dockutil
     xquartz
     gcc
-    update_xcode_plugins
+    update_xcode_plugins   
 )
 
 # Install tools
@@ -55,6 +55,7 @@ pls=(
     golang 
     octave
     scala
+    kylef/formulae/swiftenv
 ) 
 
 # Install tools

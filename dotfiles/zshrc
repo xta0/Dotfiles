@@ -33,3 +33,8 @@ plugins=( git z )
 
 #soruce plugins
 . $ZSH/plugins/z/z.sh
+
+#swiftenv
+if which swiftenv > /dev/null; then 
+    eval "$(swiftenv init -)"; 
+fi

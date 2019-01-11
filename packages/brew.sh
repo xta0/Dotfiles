@@ -6,9 +6,8 @@ brew update
 brew upgrade
 
 #install brew-cask
-brew install brew-cask
-
 brew tap caskroom/cask
+brew install brew-cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap brewsci/homebrew-science
@@ -19,7 +18,6 @@ brew cask install java
 
 tools=(
     coreutils 
-    git 
     openssl 
     wget 
     ccat

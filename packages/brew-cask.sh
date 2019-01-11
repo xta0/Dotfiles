@@ -13,15 +13,11 @@ apps=(
   virtualbox
   visual-studio-code
   rstudio
-  spotify
   amethyst
   handbrake
   xmind
   fliqlo
   keepingyouawake
-  SPlayerX
-  FutuNiuniu
-  Pomotodo
   YoudaoNote
   youdaodict
 )

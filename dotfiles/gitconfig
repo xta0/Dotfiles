@@ -1,12 +1,12 @@
 [user]
-	name = xta0
+	name = Tao Xu
 	email = taoxu.dev@gmail.com
 
 [github]
   user = xta0
 
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/taox/.gitignore_global
 
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -58,3 +58,9 @@
 [fetch]
   prune = true
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

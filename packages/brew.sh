@@ -7,7 +7,6 @@ brew upgrade
 
 #install brew-cask
 brew tap caskroom/cask
-brew install brew-cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap brewsci/homebrew-science
@@ -23,11 +22,6 @@ tools=(
     ccat
     xz 
     tree 
-    tmux 
-    htop 
-    telnet
-    readline 
-    guetzli
     xctool
     chisel
     neofetch

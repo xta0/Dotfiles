@@ -6,18 +6,15 @@ apps=(
   iterm2
   dropbox
   flux
-  google-chrome
   macdown
   slack
   sourcetree
   virtualbox
   visual-studio-code
-  rstudio
   amethyst
   handbrake
   xmind
   fliqlo
-  keepingyouawake
   YoudaoNote
   youdaodict
 )

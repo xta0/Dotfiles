@@ -38,3 +38,5 @@ plugins=( git z )
 if which swiftenv > /dev/null; then 
     eval "$(swiftenv init -)"; 
 fi
+
+. ~/.custom_profile

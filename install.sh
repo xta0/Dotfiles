@@ -144,9 +144,8 @@ log "Setting macOS login items"
 log "Setting macOS docks"
 . "$DOTFILES_DIR/etc/macos/dock"
 
-# Dev settings
-log "Setting a bunch of dev tools"
-. "$DOTFILES_DIR/etc/dev/chisel"
+# customize point
+touch ~/.custom_profile
 
 # SSH folder
 mkdir -p ~/.ssh

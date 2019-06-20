@@ -40,3 +40,4 @@ if which swiftenv > /dev/null; then
 fi
 
 . ~/.custom_profile
+

@@ -45,6 +45,8 @@ alias cpp='clang++ -std=c++11 -stdlib=libc++'
 alias swift='PATH="/usr/bin:$PATH" swift'
 alias xcodeclean="rm -rf /Users/xta0/Library/Developer/Xcode/DerivedData/*"
 
+alias gitsubsync='git submodule sync --recursive; git submodule deinit -f . && git submodule update --init --recursive'
+
 
 
 

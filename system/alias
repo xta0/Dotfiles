@@ -22,7 +22,7 @@ alias tree2="tree -d -L 2"
 alias ls='ls -GFh'
 alias ll="ls -lA"
 alias lt="ls -lhAtr"
-alias ld="ls -ld"
+#alias ld="ls -ld"
 
 #######
 # rm 

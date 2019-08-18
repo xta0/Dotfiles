@@ -111,3 +111,31 @@ pull(){
   git pull origin $branch_name
 
 }
+
+count_(){
+  fn=$1
+  dn=$2
+  n=`ls -l | grep "^-" | wc -l`
+  echo "`pwd`: ${n}"
+  let fn+=$n
+  let dn+=1
+  for x in $(ls)
+    do
+      if [ -d "$x" ] ; then
+        cd "$x"
+        count_ $fn $dn
+        cd ..
+      else
+        echo -n ""
+      fi
+    done
+}
+
+count () {
+  let fn=0
+  let dn=1
+  count_ $fn $dn
+  echo "done."
+  echo "total dirs: ${dn}"
+  echo "total files: ${fn}"
+}

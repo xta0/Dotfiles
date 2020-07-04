@@ -103,6 +103,12 @@ sh -c "$(curl -fsSL https://raw.github.com/xta0/Dotfiles/master/uninstall.sh)"
 - [Some useful resource](https://github.com/webpro/dotfiles)
 - Thanks for the [Dotfile Community](http://dotfiles.github.io/)
 
-## Todo
+## MacOS apps
 
-- docker test environment
+- Magnet
+- CopyLess
+- draw.io
+- EuDic
+- Amphetamine
+- DropOver
+

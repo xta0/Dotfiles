@@ -8,7 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #install the latest node 
-nvm install 8.9.1
+nvm install --lts
 # Globally install with npm
 packages=( eslint lodash request chalk async commander live-server bower typescript)
 

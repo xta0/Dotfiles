@@ -99,7 +99,6 @@ log "Done."
 
 log "Begin installing homebrew packages..."
 . "$DOTFILES_DIR/packages/brew.sh"
-. "$DOTFILES_DIR/packages/brew-cask.sh"
 log "Done."
 
 log "Begin installing Ruby..."

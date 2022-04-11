@@ -43,8 +43,6 @@ pls=(
     clisp 
     mit-scheme 
     lua 
-    python 
-    python3 
     golang 
     octave
     scala

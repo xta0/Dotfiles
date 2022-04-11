@@ -9,7 +9,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #install ruby
-rvm install ruby-2.6.0
+rvm install ruby --latest
 rvm --default use 2.6.0
 rvm use 2.6.0
 

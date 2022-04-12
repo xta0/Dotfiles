@@ -1,53 +1,29 @@
 
 #Install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+git clone https://github.com/Homebrew/brew ~/homebrew
+
+export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 
 brew update
 brew upgrade
 
-#install brew-cask
-brew tap caskroom/cask
-brew tap caskroom/fonts
-brew tap caskroom/versions
-brew tap brewsci/homebrew-science
-brew tap brewsci/bio
-
-#install Java
-brew cask install java
-
 tools=(
-    coreutils 
-    openssl 
-    wget 
+    coreutils
+    wget
     ccat
-    xz 
-    tree 
+    xz
+    tree
     xctool
-    chisel
     neofetch
     dockutil
-    xquartz
-    gcc
-    update_xcode_plugins   
 )
 
 # Install tools
 brew install "${tools[@]}"
-export DOTFILES_BREW_PREFIX_COREUTILS=`brew --prefix coreutils`
-export DOTFILES_BREW_PREFIX_CHISEL=`brew --prefix chisel`
 
-pls=( 
-    r
-    haskell-stack 
-    smlnj 
-    clisp 
-    mit-scheme 
-    lua 
-    golang 
-    octave
-    scala
-    kylef/formulae/swiftenv
-) 
+pls=(
+    lua
+)
 
 # Install tools
 brew install "${pls[@]}"
@@ -57,4 +33,3 @@ sleep 1
 
 # Remove outdated versions from the cellar.
 brew cleanup
-

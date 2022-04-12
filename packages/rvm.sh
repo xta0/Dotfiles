@@ -19,7 +19,4 @@ gem install rake
 gem install rack
 gem install nokogiri
 gem install jekyll
-gem install cocoapods 
-gem install houston 
-gem install cupertino
-
+gem install cocoapods

@@ -2,7 +2,7 @@
 # Make utilities available
 PATH="$DOTFILES_DIR/bin:$PATH"
 
-if [ ! -n "$DOTFILES_DIR" ]; then 
+if [ ! -n "$DOTFILES_DIR" ]; then
     DOTFILES_DIR=~/.dotfiles
 fi
 
@@ -17,3 +17,22 @@ export DOTFILES_DIR
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+. "$HOME/.cargo/env"
+
+# homebrew
+export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
+
+# conda
+export PATH="$HOME/anaconda/bin:${PATH}"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# rust
+source "$HOME/.cargo/env"

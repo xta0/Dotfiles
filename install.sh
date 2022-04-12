@@ -1,13 +1,13 @@
 #! /bin/bash
 
 init(){
-    
+
     if which tput >/dev/null 2>&1; then
       ncolors=$(tput colors)
     fi
 
     if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
-        
+
         RCol="$(tput sgr0)"
         Red="$(tput setaf 1)"
         Gre="$(tput setaf 2)"
@@ -30,17 +30,17 @@ log() {
 }
 
 error() {
-    echo ; 
+    echo ;
     echo "${Red}${On_Bla}==|DotFiles:${RCol} ${Red}${On_Bla}[✘]${RCol} '$*' "
 }
 
-success() { 
-    echo ; 
+success() {
+    echo ;
     echo "${Gre}${On_Bla}==|DotFiles:${RCol} ${Gre}${On_Bla}[✔]${RCol} '$*' "
 }
 
-warning() { 
-    echo ; 
+warning() {
+    echo ;
     echo "${Yel}${On_Bla}==|DotFiles:${RCol} ${Yel}${On_Bla}[Warning]${RCol}  '$*' \n"
 }
 
@@ -53,10 +53,20 @@ if [[ "$OSTYPE" != *"darwin"* ]];then
     exit 1
 fi
 
+#Check if xcode has been installed
+log "Checking xcode-select"
+xcode-select -p
+if [ $? -eq 0 ]; then
+   log "Found XCode"
+else
+   error "Please install XCode first"
+   exit 1
+fi
+
 log "Begin Install Dotfiles"
 
 #Check if dotfile has been installed
-if [ ! -n "$DOTFILES_DIR" ]; then 
+if [ ! -n "$DOTFILES_DIR" ]; then
     DOTFILES_DIR=${HOME}/.dotfiles
     export DOTFILES_DIR
 fi
@@ -65,13 +75,13 @@ fi
 if [ -d "$DOTFILES_DIR" ]; then
     warning "You already have dotfiles installed.$DOTFILES_DIR"
     reply=$(bash -c 'read -r -p "Do you want to remove it?[y/N]: " tmp; echo $tmp')
-    if [[ ! $reply ]] || [[ $reply =~ ^[Yy]$ ]]; then 
+    if [[ ! $reply ]] || [[ $reply =~ ^[Yy]$ ]]; then
         log "Removing ~/.dotfiles"
         rm -rf ${DOTFILES_DIR}
     else
         log "Install canclled";sleep 1
         exit 1
-    fi 
+    fi
 fi
 
 
@@ -97,11 +107,15 @@ log "Begin configuring ZSH..."
 . "$DOTFILES_DIR/packages/zsh.sh"
 log "Done."
 
+log "Begin Installing conda..."
+. "$DOTFILES_DIR/packages/conda.sh"
+log "Done."
+
 log "Begin installing homebrew packages..."
 . "$DOTFILES_DIR/packages/brew.sh"
 log "Done."
 
-log "Begin installing Ruby..."
+log "Begin installing RVM..."
 . "$DOTFILES_DIR/packages/rvm.sh"
 log "Done."
 
@@ -109,8 +123,10 @@ log "Begin Installing NVM..."
 . "$DOTFILES_DIR/packages/nvm.sh"
 log "Done."
 
-# log "Installing Python pip packages"
-# . "$DOTFILES_DIR/package/pip.sh"
+
+log "Begin Installing rust..."
+. "$DOTFILES_DIR/packages/rust.sh"
+log "Done."
 
 # Create symlinks
 # dotfiles=(
@@ -127,10 +143,10 @@ for dotfile in $(ls "${DOTFILES_DIR}/dotfiles/")
 do
     orig_dotfile="${HOME}/.${dotfile}"
     if [ -f $orig_dotfile ] || [ -h $orig_dofile ]; then
-        log "Found ${orig_dotfile} Backing up to ${orig_dotfile}.pre" 
+        log "Found ${orig_dotfile} Backing up to ${orig_dotfile}.pre"
         mv $orig_dotfile $orig_dotfile.pre;
     fi
-    log "Creating Symlink: ${Gre} ${HOME}/.$dotfile ${RCol}" 
+    log "Creating Symlink: ${Gre} ${HOME}/.$dotfile ${RCol}"
     ln -svf "$DOTFILES_DIR/dotfiles/$dotfile" ${HOME}/.$dotfile
 done
 
@@ -148,6 +164,9 @@ touch ~/.custom_profile
 
 # SSH folder
 mkdir -p ~/.ssh
+
+# reload zsh
+. ~/.zshrc
 
 success "Done! Now reload your terminal."
 

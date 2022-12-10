@@ -1,5 +1,5 @@
 
-#install oh my zsh  
+#install oh my zsh
 export ZSH="$DOTFILES_DIR/install/oh-my-zsh";
 git clone "https://github.com/xta0/oh-my-zsh.git" $ZSH || {
   echo "Could not install Oh My Zsh" >/dev/stderr
@@ -12,12 +12,8 @@ echo "Changing shell to ZSH"
 sudo chsh -s $(which zsh)
 
 #Install plugins
-# echo "Install plugins..."
-
+echo "Install plugins..."
+echo "ZSH_CUSTOM: $ZSH_CUSTOM"
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 #syntax-highlight
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
-
-
-
-
-

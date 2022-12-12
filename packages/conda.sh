@@ -3,3 +3,4 @@ chmod +x ~/conda.sh
 /bin/bash ~/conda.sh -b -p ~/anaconda
 export PATH="~/anaconda/bin:${PATH}"
 source ~/anaconda/bin/activate
+conda init zsh

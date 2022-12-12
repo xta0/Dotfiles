@@ -10,8 +10,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #install ruby
 rvm install ruby --latest
-rvm --default use 2.6.0
-rvm use 2.6.0
+rvm --default use 3.0.0
 
 #Install Gems
 gem install bundler

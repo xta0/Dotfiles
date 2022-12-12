@@ -1,7 +1,8 @@
 echo "Begin setting login items..."
 
 logins=(
-
+    Amphetamine
+    Magnet
 )
 
 #add login items

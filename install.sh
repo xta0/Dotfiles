@@ -103,16 +103,16 @@ env git clone https://github.com/xta0/Dotfiles.git $DOTFILES_DIR || {
 }
 
 #Install Packages
+log "Begin installing homebrew packages..."
+. "$DOTFILES_DIR/packages/brew.sh"
+log "Done."
+
 log "Begin configuring ZSH..."
 . "$DOTFILES_DIR/packages/zsh.sh"
 log "Done."
 
 log "Begin Installing conda..."
 . "$DOTFILES_DIR/packages/conda.sh"
-log "Done."
-
-log "Begin installing homebrew packages..."
-. "$DOTFILES_DIR/packages/brew.sh"
 log "Done."
 
 log "Begin installing RVM..."
@@ -123,19 +123,6 @@ log "Begin Installing NVM..."
 . "$DOTFILES_DIR/packages/nvm.sh"
 log "Done."
 
-
-log "Begin Installing rust..."
-. "$DOTFILES_DIR/packages/rust.sh"
-log "Done."
-
-# Create symlinks
-# dotfiles=(
-#     profile
-#     bashrc
-#     zshrc
-#     gitconfig
-#     gitignore_global
-# )
 
 # for dotfile in ${dotfiles[@]}
 log "Creating Symlinks"

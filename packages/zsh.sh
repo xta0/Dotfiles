@@ -1,7 +1,9 @@
+export DOTFILES_DIR=${HOME}/.dotfiles
 
-#install oh my zsh
+i#nstall oh my zsh
 export ZSH="$DOTFILES_DIR/install/oh-my-zsh";
-git clone "https://github.com/xta0/oh-my-zsh.git" $ZSH || {
+
+git clone "git@github.com:ohmyzsh/ohmyzsh.git" $ZSH || {
   echo "Could not install Oh My Zsh" >/dev/stderr
   exit 1
 }
@@ -17,3 +19,6 @@ echo "ZSH_CUSTOM: $ZSH_CUSTOM"
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 #syntax-highlight
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+# auto suggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
+

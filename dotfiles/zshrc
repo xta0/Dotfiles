@@ -29,17 +29,13 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git z zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=( git z  history jsontools zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 #run oh-my-zsh config
 . $ZSH/oh-my-zsh.sh
 
 #source profile
 . ~/.profile
-
-
-#soruce plugins
-. $ZSH/plugins/z/z.sh
 
 #swiftenv
 if which swiftenv > /dev/null; then

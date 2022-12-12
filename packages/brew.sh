@@ -13,7 +13,6 @@ tools=(
     ccat
     xz
     tree
-    xctool
     neofetch
     dockutil
 )
@@ -22,7 +21,6 @@ tools=(
 brew install "${tools[@]}"
 
 pls=(
-    lua
 )
 
 # Install tools

@@ -1,8 +1,21 @@
 
 #Install homebrew
-git clone https://github.com/Homebrew/brew ~/homebrew
+# Clone the Homebrew repository if brew doesn't already exist
+if [ ! -f "$HOME/homebrew/bin/brew" ]; then
+    git clone https://github.com/Homebrew/brew ~/homebrew
+fi
 
-export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
+# Export Homebrew's bin and sbin to your PATH if it's not already included
+if [[ ":$PATH:" != *":$HOME/homebrew/bin:"* ]]; then
+    export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
+fi
+
+# Check if brew command is available after the operation
+if command -v brew >/dev/null 2>&1; then
+    echo "Brew is installed and available."
+else
+    echo "Brew is not installed or not found in the PATH."
+fi
 
 brew update
 brew upgrade

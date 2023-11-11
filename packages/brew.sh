@@ -27,17 +27,10 @@ tools=(
     xz
     tree
     neofetch
-    dockutil
 )
 
 # Install tools
 brew install "${tools[@]}"
-
-pls=(
-)
-
-# Install tools
-brew install "${pls[@]}"
 
 # sleep 1
 sleep 1

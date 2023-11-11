@@ -1,4 +1,4 @@
-COMPUTER_NAME="xta0-mbp-fb"
+COMPUTER_NAME="taox-mbp-fb-1tb"
 
 osascript -e 'tell application "System Preferences" to quit'
 

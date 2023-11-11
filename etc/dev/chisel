@@ -1,5 +1,0 @@
-
-#Create .lldbinit for XCode to use 
-
-touch ~/.lldbinit && echo "command script import ${DOTFILES_BREW_PREFIX_CHISEL}/libexec/fblldb.py" >> ~/.lldbinit
-

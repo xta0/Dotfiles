@@ -3,7 +3,7 @@ export DOTFILES_DIR=${HOME}/.dotfiles
 i#nstall oh my zsh
 export ZSH="$DOTFILES_DIR/install/oh-my-zsh";
 
-git clone "git@github.com:ohmyzsh/ohmyzsh.git" $ZSH || {
+git clone "https://github.com:ohmyzsh/ohmyzsh.git" $ZSH || {
   echo "Could not install Oh My Zsh" >/dev/stderr
   exit 1
 }

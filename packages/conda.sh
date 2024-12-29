@@ -1,6 +1,7 @@
-curl --retry 3 -o ~/conda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-chmod +x ~/conda.sh
-/bin/bash ~/conda.sh -b -p ~/anaconda
-export PATH="~/anaconda/bin:${PATH}"
-source ~/anaconda/bin/activate
-conda init zsh
+mkdir -p ~/miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+export PATH="~/miniconda3/bin:${PATH}"
+source ~/miniconda3/bin/activate
+conda init --all

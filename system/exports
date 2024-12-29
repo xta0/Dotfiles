@@ -10,4 +10,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #conda
-export PATH="/Users/taox/anaconda/bin:$PATH"
+export PATH="/Users/taox/miniconda3/bin:$PATH"
